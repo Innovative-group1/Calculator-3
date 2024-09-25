@@ -162,8 +162,12 @@
 
         <h3>Your Score After Removals: <span id="afterRemovals">3.1</span></h3>
 
+        <!-- Moved script to the bottom to ensure it runs after all elements are loaded -->
         <script>
+            console.log("Script started");
+
             function calculateScore() {
+                console.log("calculateScore function called");
                 const reviews5 = parseInt(document.getElementById('reviews5').value);
                 const reviews4 = parseInt(document.getElementById('reviews4').value);
                 const reviews3 = parseInt(document.getElementById('reviews3').value);
@@ -173,17 +177,20 @@
                 const totalReviews = reviews5 + reviews4 + reviews3 + reviews2 + reviews1;
 
                 if (totalReviews === 0) {
+                    console.log("No reviews, showing 0.0 for score");
                     document.getElementById('currentScore').innerText = '0.0';
                     document.getElementById('afterRemovals').innerText = '0.0';
                     return;
                 }
 
                 const weightedScore = ((reviews5 * 5) + (reviews4 * 4) + (reviews3 * 3) + (reviews2 * 2) + (reviews1 * 1)) / totalReviews;
+                console.log("Current weighted score calculated:", weightedScore.toFixed(1));
                 document.getElementById('currentScore').innerText = weightedScore.toFixed(1);
                 calculateScoreAfterRemovals();
             }
 
             function calculateScoreAfterRemovals() {
+                console.log("calculateScoreAfterRemovals function called");
                 const reviews5 = parseInt(document.getElementById('reviews5').value);
                 const reviews4 = parseInt(document.getElementById('reviews4').value);
                 const reviews3 = parseInt(document.getElementById('reviews3').value);
@@ -205,11 +212,13 @@
                 const totalNewReviews = newReviews5 + newReviews4 + newReviews3 + newReviews2 + newReviews1;
 
                 if (totalNewReviews === 0) {
+                    console.log("No reviews left after removals, showing 0.0");
                     document.getElementById('afterRemovals').innerText = '0.0';
                     return;
                 }
 
                 const newWeightedScore = ((newReviews5 * 5) + (newReviews4 * 4) + (newReviews3 * 3) + (newReviews2 * 2) + (newReviews1 * 1)) / totalNewReviews;
+                console.log("New weighted score after removals calculated:", newWeightedScore.toFixed(1));
                 document.getElementById('afterRemovals').innerText = newWeightedScore.toFixed(1);
             }
 
@@ -231,6 +240,7 @@
                 });
             });
 
+            console.log("Initial calculation started");
             calculateScore();
         </script>
     </div>
