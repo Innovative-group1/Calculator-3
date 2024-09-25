@@ -4,6 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Score Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .calculator {
+            width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #000000;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-color: #ece295;
+        }
+
+        h2, h3 {
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .input-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .input-row label {
+            flex: 1;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            width: 80px;
+            margin-left: 10px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .increment-button, .decrement-button {
+            background-color: #ffffff;
+            color: #ece295;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-left: 10px;
+            border-radius: 4px;
+        }
+
+        .result {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ece295;
+            color: white;
+            text-align: center;
+        }
+
+        .result-revenue, .result-profit {
+            background-color: #2196f3;
+            color: #ffffff;
+        }
+
+        .section-header {
+            font-size: 1.3em;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: #ece295;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .explanation-text {
+            font-size: 0.9em;
+            color: #cccccc;
+        }
+
+    </style>
 </head>
 <body>
     <div class="calculator">
@@ -77,6 +162,8 @@
 
         <h3>Your Score After Removals: <span id="afterRemovals">3.1</span></h3>
 
+        <!-- Commented out script block for now -->
+        <!-- 
         <script>
             console.log("Script started");
 
@@ -157,6 +244,7 @@
             console.log("Initial calculation started");
             calculateScore();
         </script>
+        -->
     </div>
 </body>
 </html>
